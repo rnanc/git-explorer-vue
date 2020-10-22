@@ -1,9 +1,14 @@
 <template>
   <div id="list-page">
-    <img class="image_profile" v-bind:src=person.avatar_url>
+    <div>
+        <router-link class="link" :to="{name:home}"> <font-awesome-icon icon="angle-left" /></router-link>
+        <img class="image_profile" v-bind:src=person.avatar_url>
+    </div>
     <h2>{{person.name}}</h2>
     <h4>{{person.bio}}</h4>
+    <div>
     <h5>Location: {{person.location}}</h5><h5>User: {{person.login}}</h5>
+    </div>
   </div>
 </template>
 
@@ -15,7 +20,8 @@ export default {
   name: 'Description',
   data() {
     return {
-      person: {}
+      person: {},
+      home:"home"
     }
   },
   async created() {
